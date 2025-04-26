@@ -1,20 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sidebar.css';
-import { MdDashboard, MdPerson, MdCalendarToday, MdBarChart, MdCloud, MdMap, MdSettings, MdLogout } from 'react-icons/md';
+import { MdDashboard, MdPerson, MdCalendarToday, MdBarChart, MdCloud, MdMap, MdSettings, MdLogout, MdExpandMore, MdExpandLess } from 'react-icons/md';
 
 const Icon = (IconComponent: any) => <IconComponent />;
 
 const Sidebar = () => {
+  const [projectsOpen, setProjectsOpen] = useState(true);
+  const [tasksOpen, setTasksOpen] = useState(true);
+
   return (
-    <div className="sidebar">
-      <div className="sidebar-icon active">{Icon(MdDashboard)}</div>
-      <div className="sidebar-icon">{Icon(MdPerson)}</div>
-      <div className="sidebar-icon">{Icon(MdCalendarToday)}</div>
-      <div className="sidebar-icon">{Icon(MdBarChart)}</div>
-      <div className="sidebar-icon">{Icon(MdCloud)}</div>
-      <div className="sidebar-icon">{Icon(MdMap)}</div>
-      <div className="sidebar-icon">{Icon(MdSettings)}</div>
-      <div className="sidebar-icon logout">{Icon(MdLogout)}</div>
+    <div className="sidebar sidebar-wide">
+      <div className="sidebar-header">
+        <span className="sidebar-title">Projects</span>
+        <button className="sidebar-add-btn">+</button>
+      </div>
+      <div className="sidebar-section">
+        <div className="sidebar-section-header" onClick={() => setProjectsOpen(!projectsOpen)}>
+          <span>Projects</span>
+          {projectsOpen ? <MdExpandLess /> : <MdExpandMore />}
+        </div>
+        {projectsOpen && (
+          <div className="sidebar-sublist">
+            <div className="sidebar-subitem">All projects (3)</div>
+            <div className="sidebar-subitem sidebar-subitem-active">Design system</div>
+            <div className="sidebar-subitem">User flow</div>
+            <div className="sidebar-subitem">Ux research</div>
+          </div>
+        )}
+      </div>
+      <div className="sidebar-section">
+        <div className="sidebar-section-header" onClick={() => setTasksOpen(!tasksOpen)}>
+          <span>Tasks</span>
+          {tasksOpen ? <MdExpandLess /> : <MdExpandMore />}
+        </div>
+        {tasksOpen && (
+          <div className="sidebar-sublist">
+            <div className="sidebar-subitem">All tasks (11)</div>
+            <div className="sidebar-subitem">To do (4)</div>
+            <div className="sidebar-subitem sidebar-subitem-active">In progress (4)</div>
+            <div className="sidebar-subitem">Done (3)</div>
+          </div>
+        )}
+      </div>
+      <div className="sidebar-divider" />
+      <div className="sidebar-link">Reminders <MdExpandMore /></div>
+      <div className="sidebar-link">Messengers <MdExpandMore /></div>
+      <div className="sidebar-footer">
+        <div className="sidebar-theme-switch">
+          <span className="sidebar-theme-btn sidebar-theme-btn-light">☀️ Light</span>
+          <span className="sidebar-theme-btn sidebar-theme-btn-dark sidebar-theme-btn-active">🌙 Dark</span>
+        </div>
+      </div>
     </div>
   );
 };

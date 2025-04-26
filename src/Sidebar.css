@@ -39,4 +39,142 @@
 .sidebar-icon.logout:hover {
   background: #393e47;
   color: #fff;
+}
+
+.sidebar.sidebar-wide {
+  width: 260px;
+  min-width: 220px;
+  background: #23272f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 0 0 0 0;
+  box-shadow: 1px 0 0 0 #2224;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 8px 24px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.sidebar-add-btn {
+  background: #393e47;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-section {
+  margin-top: 8px;
+}
+
+.sidebar-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #b0b3b8;
+  user-select: none;
+}
+
+.sidebar-sublist {
+  margin-left: 24px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-subitem {
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #b0b3b8;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-subitem:hover {
+  background: #393e47;
+  color: #fff;
+}
+
+.sidebar-subitem-active {
+  background: #393e47;
+  color: #fff;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: #393e47;
+  margin: 16px 0 8px 24px;
+  width: 80%;
+}
+
+.sidebar-link {
+  padding: 8px 24px;
+  color: #b0b3b8;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.sidebar-link:hover {
+  color: #fff;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 24px 0 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-theme-switch {
+  display: flex;
+  gap: 8px;
+  background: #23272f;
+  border-radius: 16px;
+  padding: 4px 8px;
+  border: 1px solid #393e47;
+}
+
+.sidebar-theme-btn {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #b0b3b8;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-theme-btn-active, .sidebar-theme-btn:hover {
+  background: #393e47;
+  color: #fff;
 } 

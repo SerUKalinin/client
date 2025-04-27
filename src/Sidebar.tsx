@@ -51,8 +51,8 @@ const Sidebar = () => {
       <div className="sidebar-link">Messengers {renderIcon(MdExpandMore)}</div>
       <div className="sidebar-footer">
         <div className="sidebar-theme-switch">
-          <span className="sidebar-theme-btn sidebar-theme-btn-light">☀️ Light</span>
-          <span className="sidebar-theme-btn sidebar-theme-btn-dark sidebar-theme-btn-active">🌙 Dark</span>
+          <span className="sidebar-theme-btn sidebar-theme-btn-light">☀️ </span>
+          <span className="sidebar-theme-btn sidebar-theme-btn-dark sidebar-theme-btn-active">🌙 </span>
         </div>
       </div>
     </div>

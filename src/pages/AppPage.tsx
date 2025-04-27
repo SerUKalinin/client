@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 import IconSidebar from '../IconSidebar';
+import Header from '../Header';
 import './AppPage.css';
 
 const AppPage = () => {
@@ -25,15 +26,7 @@ const AppPage = () => {
       />
       {isSidebarVisible && <Sidebar />}
       <div className={`app-content ${isSidebarVisible ? 'with-sidebar' : 'without-sidebar'}`}>
-        <div className="app-header">
-          <h1>Личный кабинет</h1>
-          <button 
-            onClick={handleLogout}
-            className="logout-button"
-          >
-            Выйти
-          </button>
-        </div>
+        <Header />
         <div className="app-main">
           <p>Добро пожаловать в ваш личный кабинет!</p>
         </div>

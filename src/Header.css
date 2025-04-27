@@ -1,0 +1,70 @@
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  height: 56px;
+  background: #2c2f35;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-welcome {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.header-emoji {
+  margin-left: 6px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-icon {
+  cursor: pointer;
+  color: #bfc4cc;
+  transition: color 0.2s;
+}
+
+.header-icon:hover {
+  color: #fff;
+}
+
+.header-icon.notification {
+  position: relative;
+}
+
+.header-notification-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 7px;
+  height: 7px;
+  background: #ffb400;
+  border-radius: 50%;
+  border: 2px solid #2c2f35;
+}
+
+.header-date {
+  display: flex;
+  align-items: center;
+  color: #bfc4cc;
+  font-size: 0.98rem;
+}
+
+.header-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #393e47;
+} 

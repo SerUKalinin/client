@@ -21,27 +21,6 @@
   margin-left: 60px; /* Ширина IconSidebar */
 }
 
-.app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.logout-button {
-  padding: 8px 16px;
-  background: #393e47;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.logout-button:hover {
-  background: #4a4f59;
-}
-
 .app-main {
   flex: 1;
   background: #282c34;

@@ -10,15 +10,10 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  transition: margin-left 0.3s ease;
 }
 
 .app-content.with-sidebar {
-  margin-left: 260px;
-}
-
-.app-content.without-sidebar {
-  margin-left: 60px; /* Ширина IconSidebar */
+  margin-left: 60px; /* ширина icon-sidebar */
 }
 
 .app-main {
@@ -26,4 +21,5 @@
   background: #282c34;
   border-radius: 8px;
   padding: 20px;
+  margin-top: 16px;
 } 

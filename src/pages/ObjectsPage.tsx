@@ -3,17 +3,17 @@ import IconSidebar from '../IconSidebar';
 import Header from '../Header';
 import './AppPage.css';
 
-const AppPage = () => (
+const ObjectsPage = () => (
   <div className="app-page">
     <IconSidebar onToggleSidebar={() => {}} isSidebarVisible={true} />
     <div className="app-content with-sidebar">
       <Header />
       <div className="app-main">
-        <h2>Главная страница</h2>
-        <p>Добро пожаловать в систему!</p>
+        <h2>Объекты</h2>
+        <p>Здесь будет список объектов или другая информация.</p>
       </div>
     </div>
   </div>
 );
 
-export default AppPage; 
+export default ObjectsPage; 

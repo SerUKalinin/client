@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import AppPage from './pages/AppPage';
+import UsersPage from './pages/UsersPage';
+import TasksPage from './pages/TasksPage';
+import ObjectsPage from './pages/ObjectsPage';
 // import IconSidebar from './IconSidebar';
 // import Sidebar from './Sidebar';
 // import logo from './logo.svg';
@@ -21,15 +24,38 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route 
-          path="/app/*" 
+        <Route
+          path="/app"
           element={
             <ProtectedRoute>
               <AppPage />
             </ProtectedRoute>
-          } 
+          }
         />
-        {/* Здесь позже будут другие маршруты для основного приложения */}
+        <Route
+          path="/users"
+          element={
+            <ProtectedRoute>
+              <UsersPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/tasks"
+          element={
+            <ProtectedRoute>
+              <TasksPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/objects"
+          element={
+            <ProtectedRoute>
+              <ObjectsPage />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

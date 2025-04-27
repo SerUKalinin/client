@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { login as loginApi } from '../services/authService';
+import { useNavigate } from 'react-router-dom';
 
 type LoginFormProps = {
   onRegister: () => void;
@@ -11,6 +12,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onRegister, onReset }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onRegister, onReset }) => {
       const res = await loginApi(login, password);
       if (res.jwtToken) {
         localStorage.setItem('token', res.jwtToken);
-        // window.location.reload(); // или вызвать callback для перехода в приложение
+        navigate('/app');
       } else {
         setError('Ошибка авторизации');
       }

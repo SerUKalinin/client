@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 import { MdDashboard, MdPerson, MdCalendarToday, MdBarChart, MdCloud, MdMap, MdSettings, MdLogout, MdExpandMore, MdExpandLess } from 'react-icons/md';
-
-const Icon = (IconComponent: any) => <IconComponent />;
+import { IconType } from 'react-icons';
 
 const Sidebar = () => {
   const [projectsOpen, setProjectsOpen] = useState(true);
   const [tasksOpen, setTasksOpen] = useState(true);
+
+  const renderIcon = (Icon: IconType) => {
+    const IconComponent = Icon as React.ComponentType<{ size?: number }>;
+    return <IconComponent size={20} />;
+  };
 
   return (
     <div className="sidebar sidebar-wide">
@@ -17,7 +21,7 @@ const Sidebar = () => {
       <div className="sidebar-section">
         <div className="sidebar-section-header" onClick={() => setProjectsOpen(!projectsOpen)}>
           <span>Projects</span>
-          {projectsOpen ? <MdExpandLess /> : <MdExpandMore />}
+          {projectsOpen ? renderIcon(MdExpandLess) : renderIcon(MdExpandMore)}
         </div>
         {projectsOpen && (
           <div className="sidebar-sublist">
@@ -31,7 +35,7 @@ const Sidebar = () => {
       <div className="sidebar-section">
         <div className="sidebar-section-header" onClick={() => setTasksOpen(!tasksOpen)}>
           <span>Tasks</span>
-          {tasksOpen ? <MdExpandLess /> : <MdExpandMore />}
+          {tasksOpen ? renderIcon(MdExpandLess) : renderIcon(MdExpandMore)}
         </div>
         {tasksOpen && (
           <div className="sidebar-sublist">
@@ -43,8 +47,8 @@ const Sidebar = () => {
         )}
       </div>
       <div className="sidebar-divider" />
-      <div className="sidebar-link">Reminders <MdExpandMore /></div>
-      <div className="sidebar-link">Messengers <MdExpandMore /></div>
+      <div className="sidebar-link">Reminders {renderIcon(MdExpandMore)}</div>
+      <div className="sidebar-link">Messengers {renderIcon(MdExpandMore)}</div>
       <div className="sidebar-footer">
         <div className="sidebar-theme-switch">
           <span className="sidebar-theme-btn sidebar-theme-btn-light">☀️ Light</span>

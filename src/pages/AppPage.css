@@ -10,7 +10,15 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  margin-left: 245px; /* Уменьшил на 10px (было 240px) */
+  transition: margin-left 0.3s ease;
+}
+
+.app-content.with-sidebar {
+  margin-left: 260px;
+}
+
+.app-content.without-sidebar {
+  margin-left: 60px; /* Ширина IconSidebar */
 }
 
 .app-header {

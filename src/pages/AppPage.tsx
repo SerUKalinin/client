@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../Sidebar';
 import IconSidebar from '../IconSidebar';
@@ -6,17 +6,25 @@ import './AppPage.css';
 
 const AppPage = () => {
   const navigate = useNavigate();
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigate('/');
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
+
   return (
     <div className="app-page">
-      <IconSidebar />
-      <Sidebar />
-      <div className="app-content">
+      <IconSidebar 
+        onToggleSidebar={toggleSidebar} 
+        isSidebarVisible={isSidebarVisible} 
+      />
+      {isSidebarVisible && <Sidebar />}
+      <div className={`app-content ${isSidebarVisible ? 'with-sidebar' : 'without-sidebar'}`}>
         <div className="app-header">
           <h1>Личный кабинет</h1>
           <button 
